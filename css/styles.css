@@ -1,299 +1,155 @@
 :root {
-	--main-bg-color: #004481;
-	--footer-bg-color: #262a31;
+    /* VAR COLORS */
+    --main-bg-color: #004481;
+    --footer-bg-color: #262a31;
+
+    /* FONT*/
+    --font-family: Roboto, Segoe UI, Tahoma, Geneva, Verdana, sans-serif;  
 }
+
+/*______INITIAL PRE STYLES___________________*/
 body {
-	margin: 0;
-	padding: 0;
-	background-color: #fff;
-	font-family: Segoe UI, Tahoma, Geneva, Verdana, sans-serif;
-	box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    background-color: #fff;
+    font-family: var(--font-family) ;
+    box-sizing: border-box;
 }
+.nav-bar .nav-icon-menu,.footer,
+.nav-bar .title, .card-content .card-button {
+    color: #fff;
+}
+/*__this container we use to position the footer___*/
 .container {
-	height: 100%;
-	position: relative;
+    height: 100%;
+    position: relative;
 }
+/*____ CLEANING THE STYLES OF TAG a_____   */
 a {
-	text-decoration: none;
-	outline: none;
+    text-decoration: none;
+    outline: none;
 }
+/* ____SHARED STYLES_____ */
+.nav-bar, .card-container, .card-container .card, .card-container .card .card-content, .footer {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+}
+.card-container, .card-container .card, .card-container .card .card-content, .footer {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+}
+/*_______________END SHARED STYLES________________________________________*/
+
+/*_____NAV BAR____ */
 .nav-bar {
-	display: -webkit-box;
-	display: -webkit-flex;
-	display: -ms-flexbox;
-	display: flex;
-	-webkit-box-pack: justify;
-	-webkit-justify-content: space-between;
-	-ms-flex-pack: justify;
-	justify-content: space-between;
-	-webkit-box-align: center;
-	-webkit-align-items: center;
-	-ms-flex-align: center;
-	align-items: center;
-	font-size: 1.3em;
-	background-color: var(--main-bg-color);
-	padding: 1em 2em;
-	height: 30px;
+    -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+
+    font-size: 1.3em;
+    background-color: var(--main-bg-color);
+    padding: 1em 2em;
+    height: 30px;
 }
-.nav-bar .nav-icon-menu,
-.nav-bar .title {
-	color: #fff;
+
+/*______BANER________ */
+.baner-container {
+    max-width: 80%;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    justify-items: center;
 }
-.baner {
-	display: grid;
-	grid-template-columns: 1fr;
-	justify-items: center;
-}
+
 .baner .baner-content .baner-span,
 .button {
-	color: var(--main-bg-color);
+    color: var(--main-bg-color);
 }
-.button {
-	width: 160px;
-	padding: 0.7em;
-	text-align: center;
-	font-size: 1.1em;
-	border: 3px solid var(--main-bg-color);
-	border-radius: 25px;
+
+/*________SECTION OF CARDS___________ */  
+.card-container{  
+    justify-content: center;
 }
-.card-container {
-	display: grid;
-	grid-template-columns: 1fr;
-	justify-items: center;
+
+.box-card {
+    width: 100%;
+    display: grid;
+    gap: 1em;
+    grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+    justify-items: center;
+    margin: 6em 0 12em;
 }
+
 .card-container .card {
-	margin: 1.5em;
-	padding: 1em 0.3em;
-	border-radius: 10px;
-	box-shadow: 0 0 10px 0.1px var(--main-bg-color);
-	width: 260px;
-	height: auto;
-	display: -webkit-box;
-	display: -webkit-flex;
-	display: -ms-flexbox;
-	display: flex;
-	-webkit-box-orient: vertical;
-	-webkit-box-direction: normal;
-	-webkit-flex-direction: column;
-	-ms-flex-direction: column;
-	flex-direction: column;
-	-webkit-box-align: center;
-	-webkit-align-items: center;
-	-ms-flex-align: center;
-	align-items: center;
+    margin: 10px;
+    padding: 1em 0.3em;
+    border-radius: 10px;
+    box-shadow: 0 0 10px 0.1px var(--main-bg-color);
+    width: 260px;
+    height: auto;
+    
 }
+
 .card-container .card .card-content {
-	width: 90%;
-	display: -webkit-box;
-	display: -webkit-flex;
-	display: -ms-flexbox;
-	display: flex;
-	-webkit-box-orient: vertical;
-	-webkit-box-direction: normal;
-	-webkit-flex-direction: column;
-	-ms-flex-direction: column;
-	flex-direction: column;
-	-webkit-box-align: center;
-	-webkit-align-items: center;
-	-ms-flex-align: center;
-	align-items: center;
+    width: 90%;
 }
+
 .card-container .card .card-content h2 {
-	padding-bottom: 10px;
-	color: var(--main-bg-color);
-	border-bottom: 3px solid var(--main-bg-color);
-	text-align: center;
-	width: 90%;
+    padding-bottom: 10px;
+    color: var(--main-bg-color);
+    border-bottom: 3px solid var(--main-bg-color);
+    text-align: center;
+    width: 90%;
+}
+
+/*_________-BUTTON, CARD BUTTON AND MODEL PHOTO_________*/
+.button {
+    width: 160px;
+    padding: 0.7em;
+    text-align: center;
+    font-size: 1.1em;
+    border: 3px solid var(--main-bg-color);
+    border-radius: 25px;
 }
 .card-button {
-	background-color: var(--main-bg-color);
-	color: #fff;
+    background-color: var(--main-bg-color);
 }
+
 .model-photo {
-	object-fit: cover;
-	border-radius: 50%;
-	padding: 1em;
-	width: 100px;
-	height: 100px;
+    object-fit: cover;
+    border-radius: 50%;
+    padding: 1em;
+    width: 100px;
+    height: 100px;
 }
+
+/* ___________FOOTER________*/
 .footer {
-	display: -webkit-box;
-	display: -webkit-flex;
-	display: -ms-flexbox;
-	display: flex;
-	-webkit-box-orient: vertical;
-	-webkit-box-direction: normal;
-	-webkit-flex-direction: column;
-	-ms-flex-direction: column;
-	flex-direction: column;
-	-webkit-box-align: center;
-	-webkit-align-items: center;
-	-ms-flex-align: center;
-	align-items: center;
-	color: #fff;
-	background-color: var(--footer-bg-color);
-	height: 200px;
+    background-color: var(--footer-bg-color);
+    height: 200px;
 }
+
 .footer .photo-author {
-	width: 50px;
-	height: 50px;
+    width: 50px;
+    height: 50px;
 }
-@media screen and (min-width: 668px) {
-	.baner {
-		grid-template-columns: 1fr 1fr;
-	}
-}
+
+/*___________MEDIA QUERIES___________*/
 @media screen and (min-width: 800px) {
-	.card-content {
-		grid-template-columns: 1fr 1fr;
-	}
-}
-	--main-bg-color: #004481;
-	--footer-bg-color: #262a31;
-}
-body {
-	margin: 0;
-	padding: 0;
-	background-color: #fff;
-	font-family: Segoe UI, Tahoma, Geneva, Verdana, sans-serif;
-	box-sizing: border-box;
-}
-.container {
-	height: 100%;
-	position: relative;
-}
-a {
-	text-decoration: none;
-	outline: none;
-}
-.nav-bar {
-	display: -webkit-box;
-	display: -webkit-flex;
-	display: -ms-flexbox;
-	display: flex;
-	-webkit-box-pack: justify;
-	-webkit-justify-content: space-between;
-	-ms-flex-pack: justify;
-	justify-content: space-between;
-	-webkit-box-align: center;
-	-webkit-align-items: center;
-	-ms-flex-align: center;
-	align-items: center;
-	font-size: 1.3em;
-	background-color: var(--main-bg-color);
-	padding: 1em 2em;
-	height: 30px;
-}
-.nav-bar .nav-icon-menu,
-.nav-bar .title {
-	color: #fff;
-}
-.baner {
-	display: grid;
-	grid-template-columns: 1fr;
-	justify-items: center;
-}
-.baner .baner-content .baner-span,
-.button {
-	color: var(--main-bg-color);
-}
-.button {
-	width: 160px;
-	padding: 0.7em;
-	text-align: center;
-	font-size: 1.1em;
-	border: 3px solid var(--main-bg-color);
-	border-radius: 25px;
-}
-.card-container {
-	display: grid;
-	grid-template-columns: 1fr;
-	justify-items: center;
-}
-.card-container .card {
-	margin: 1.5em;
-	padding: 1em 0.3em;
-	border-radius: 10px;
-	box-shadow: 0 0 10px 0.1px var(--main-bg-color);
-	width: 260px;
-	height: auto;
-	display: -webkit-box;
-	display: -webkit-flex;
-	display: -ms-flexbox;
-	display: flex;
-	-webkit-box-orient: vertical;
-	-webkit-box-direction: normal;
-	-webkit-flex-direction: column;
-	-ms-flex-direction: column;
-	flex-direction: column;
-	-webkit-box-align: center;
-	-webkit-align-items: center;
-	-ms-flex-align: center;
-	align-items: center;
-}
-.card-container .card .card-content {
-	width: 90%;
-	display: -webkit-box;
-	display: -webkit-flex;
-	display: -ms-flexbox;
-	display: flex;
-	-webkit-box-orient: vertical;
-	-webkit-box-direction: normal;
-	-webkit-flex-direction: column;
-	-ms-flex-direction: column;
-	flex-direction: column;
-	-webkit-box-align: center;
-	-webkit-align-items: center;
-	-ms-flex-align: center;
-	align-items: center;
-}
-.card-container .card .card-content h2 {
-	padding-bottom: 10px;
-	color: var(--main-bg-color);
-	border-bottom: 3px solid var(--main-bg-color);
-	text-align: center;
-	width: 90%;
-}
-.card-button {
-	background-color: var(--main-bg-color);
-	color: #fff;
-}
-.model-photo {
-	object-fit: cover;
-	border-radius: 50%;
-	padding: 1em;
-	width: 100px;
-	height: 100px;
-}
-.footer {
-	display: -webkit-box;
-	display: -webkit-flex;
-	display: -ms-flexbox;
-	display: flex;
-	-webkit-box-orient: vertical;
-	-webkit-box-direction: normal;
-	-webkit-flex-direction: column;
-	-ms-flex-direction: column;
-	flex-direction: column;
-	-webkit-box-align: center;
-	-webkit-align-items: center;
-	-ms-flex-align: center;
-	align-items: center;
-	color: #fff;
-	background-color: var(--footer-bg-color);
-	height: 200px;
-}
-.footer .photo-author {
-	width: 50px;
-	height: 50px;
-}
-@media screen and (min-width: 668px) {
-	.baner {
-		grid-template-columns: 1fr 1fr;
-	}
-}
-@media screen and (min-width: 800px) {
-	.card-content {
-		grid-template-columns: 1fr 1fr;
-	}
+    .baner {
+        box-shadow: 0 1px 10px var(--main-bg-color);
+    }
+    .box-card{
+        width: 75%;
+    }
 }
