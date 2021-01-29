@@ -3,9 +3,14 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+
         <!-- Style sheet -->
         <link rel="stylesheet" href="css/styles.css?t=1611357279174" />
 
+        <link rel="shortcut icon" href="assets/img/icon.png"
+            type="image/x-icon">
         <title>orientador</title>
     </head>
 
@@ -13,7 +18,26 @@
         <!--NAV BAR -->
         <nav class="nav-bar">
             <span class="title">Orientador</span>
-            <i class="fas fa-bars nav-icon-menu"></i>
+
+            <input type="checkbox" id="btn-menu" name="btn-menu">
+            <!--label to open-->
+            <label for="btn-menu" class="lbl-menu"><i class="fas fa-bars
+                    nav-icon-menu"></i></label>
+
+            <div class="container-menu">
+                <!--aside position on the right-->
+                <aside class="content-menu">
+                    <a href="#">Especialidades</a>
+                    <a href="#">Especialidades</a>
+                    <a href="#">Especialidades</a>
+                    <a href="#">Especialidades</a>
+                    <a href="#">Especialidades</a>
+            <!--label to close-->
+                    <label for="btn-menu" class="lbl-menu"><i class="fas
+                            fa-times"></i></label>
+
+                </aside>
+            </div>
         </nav>
         <!-------------------------------------------------------------------------------------------- -->
         <!-- BANER -->
@@ -96,13 +120,16 @@
         <!-------------------------------------------------------------------------------------------- -->
         <!-- FOOTER -->
         <footer class="footer">
-            <a href="#">
-                <img
-                    class="model-photo photo-autor"
-                    src="assets/img/model_photo.jpg"
-                    alt="model photo"
-                    />
-            </a>
+            <div class="img-container">
+
+                <a href="#">
+                    <img
+                        class="model-photo photo-autor"
+                        src="assets/img/model_photo.jpg"
+                        alt="model photo"
+                        />
+                </a>
+            </div>
             <span>Copyright &#xA9;.</span>
             <span>Todos los derechos reservados</span>
         </footer>
