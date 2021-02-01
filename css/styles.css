@@ -1,7 +1,7 @@
 :root {
     /* VAR COLORS */
     --main-bg-color: rgb(0, 68, 129);
-    --footer-bg-color: #262a31;
+    --secondary-bg-color: #262a31;
 
     /* FONT*/
     --font-family: Roboto, Segoe UI, Tahoma, Geneva, Verdana, sans-serif;  
@@ -14,6 +14,7 @@ body {
     background-color: #fff;
     font-family: var(--font-family) ;
     box-sizing: border-box;
+    overflow-x: hidden;
 }
 .nav-bar .nav-icon-menu,.footer,
 .nav-bar .title, .card-content .card-button {
@@ -46,6 +47,10 @@ a {
 .button, .content-menu a, .card-container .card .card-content h2, .lbl-menu{
     text-align: center;
 }
+
+.container-menu, .content-menu, .box-card{
+    width: 100%;
+}
 /*_______________END SHARED STYLES________________________________________*/
 
 /*_____NAV BAR____ */
@@ -57,7 +62,7 @@ a {
 
     font-size: 1.3em;
     background-color: var(--main-bg-color);
-    padding: 1em 2em;
+    padding: 1em 2vw;
     height: 30px;
 
 }
@@ -76,7 +81,6 @@ a {
 
 .container-menu{
     position: absolute;
-    width: 100%;
     height: 100vh;
     background-color: rgba(0, 68, 129, .5);
     top: 0;
@@ -88,29 +92,32 @@ a {
 }
 
 .content-menu{
-    position: absolute;
-    width: 100%;
+    position: absolute;  
+    transform: translateX(100%);
     max-width: 450px;
-    background-color:var(--footer-bg-color);
+    background-color:var(--secondary-bg-color);
     opacity: 1;
     height: 100%;
     top: 0;
     right: 0;
     padding: 2em 1em;
+    transition: transform .5s cubic-bezier(1,.51,.33,1.06);
+    
 }
 
 .content-menu a{  
     width: 80%;
     justify-content: center;
     height: 50px;
+    font-size: .8em;
     margin: 1.5em 0;
     color: rgb(219, 219, 219);
     border-bottom: 1px solid gray; 
     border-left: 3px solid transparent;
-
     transition: border-left 300ms linear;
 }
 
+/* Label of aside menu (z) */
 .container-menu label{
 order: -1;
 margin-bottom: 1em;
@@ -127,7 +134,11 @@ margin-bottom: 1em;
     opacity: 1;
 
 }
+.nav-bar input:checked ~ .container-menu .content-menu{
+    
+    transform: translateX(0%);
 
+}
 /*______BANER________ */
 .baner-container {
     max-width: 80%;
@@ -148,7 +159,7 @@ margin-bottom: 1em;
 }
 
 .box-card {
-    width: 100%;
+ 
     display: grid;
     gap: 1em;
     grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
@@ -200,7 +211,7 @@ margin-bottom: 1em;
 
 /* ___________FOOTER________*/
 .footer {
-    background-color: var(--footer-bg-color);
+    background-color: var(--secondary-bg-color);
     height: 200px;
 }
 
