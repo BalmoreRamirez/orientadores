@@ -1,24 +1,31 @@
 :root {
     /* VAR COLORS */
-    --main-bg-color: rgb(0, 68, 129);
+    --main-bg-color: #004481;
     --secondary-bg-color: #262a31;
+    --tertiary-bg-color:#ffffff;
+    --emphasis-font-color: #40e0d0;
+
+    
 
     /* FONT*/
     --font-family: Roboto, Segoe UI, Tahoma, Geneva, Verdana, sans-serif;  
 }
 
 /*______INITIAL PRE STYLES___________________*/
+html{
+    scroll-behavior: smooth;
+}
 body {
     margin: 0;
     padding: 0;
-    background-color: #fff;
+    background-color: var(--tertiary-bg-color);
     font-family: var(--font-family) ;
     box-sizing: border-box;
     overflow-x: hidden;
 }
 .nav-bar .nav-icon-menu,.footer,
 .nav-bar .title, .card-content .card-button {
-    color: #fff;
+    color: var(--tertiary-bg-color);
 }
 
 a {
@@ -26,7 +33,7 @@ a {
     outline: none;
 }
 /* ____SHARED STYLES_____ */
-.nav-bar, .content-menu, .content-menu a ,.card-container, .card-container .card, .card-container .card .card-content, .footer {
+.container-nav-bar,.nav-bar, .content-menu, .content-menu a ,.card-container, .card-container .card, .card-container .card ,.footer {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -44,7 +51,7 @@ a {
     flex-direction: column;
 }
 
-.button, .content-menu a, .card-container .card .card-content h2, .lbl-menu{
+.button,.content-menu .item-menu a  ,.card-container .card .card-content h3, .lbl-menu{
     text-align: center;
 }
 
@@ -53,99 +60,15 @@ a {
 }
 /*_______________END SHARED STYLES________________________________________*/
 
-/*_____NAV BAR____ */
-.nav-bar {
-    -webkit-box-pack: justify;
-    -webkit-justify-content: space-between;
-    -ms-flex-pack: justify;
-    justify-content: space-between;
-
-    font-size: 1.3em;
-    background-color: var(--main-bg-color);
-    padding: 1em 2vw;
-    height: 30px;
-
-}
-
-#btn-menu{
-    display: none;
-    
-}
-.lbl-menu{
-    color: #fff;
-    font-size: 1.5em;
-    display: block;
-    cursor: pointer;
-    width: 100px;
-}
-
-.container-menu{
-    position: absolute;
-    height: 100vh;
-    background-color: rgba(0, 68, 129, .5);
-    top: 0;
-    left: 0;
-    opacity: 0;
-    visibility: hidden;
-    transition: all 200ms linear;
-    
-}
-
-.content-menu{
-    position: absolute;  
-    transform: translateX(100%);
-    max-width: 450px;
-    background-color:var(--secondary-bg-color);
-    opacity: 1;
-    height: 100%;
-    top: 0;
-    right: 0;
-    padding: 2em 1em;
-    transition: transform .5s cubic-bezier(1,.51,.33,1.06);
-    
-}
-
-.content-menu a{  
-    width: 80%;
-    justify-content: center;
-    height: 50px;
-    font-size: .8em;
-    margin: 1.5em 0;
-    color: rgb(219, 219, 219);
-    border-bottom: 1px solid gray; 
-    border-left: 3px solid transparent;
-    transition: border-left 300ms linear;
-}
-
-/* Label of aside menu (z) */
-.container-menu label{
-order: -1;
-margin-bottom: 1em;
-
-}
-
-.content-menu a:hover{
-    border-left: 3px solid #fff; 
-    color: #fff;
-}
-
-.nav-bar input:checked ~ .container-menu{
-    visibility: visible;
-    opacity: 1;
-
-}
-.nav-bar input:checked ~ .container-menu .content-menu{
-    
-    transform: translateX(0%);
-
-}
 /*______BANER________ */
 .baner-container {
-    max-width: 80%;
+    max-width: 82%;
     margin: auto;
     display: grid;
+    padding-bottom: 3em;
+    
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    justify-items: center;
+   justify-items: center;
 }
 
 .baner .baner-content .baner-span,
@@ -153,40 +76,15 @@ margin-bottom: 1em;
     color: var(--main-bg-color);
 }
 
-/*________SECTION OF CARDS___________ */  
-.card-container{  
-    justify-content: center;
+.img-baner-container{
+    width: 100%;
+    height: 100%;
+    max-width: 300px;
+    max-height: 300px;
 }
 
-.box-card {
- 
-    display: grid;
-    gap: 1em;
-    grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
-    justify-items: center;
-    margin: 6em 0 12em;
-}
 
-.card-container .card {
-    margin: 10px;
-    padding: 1em 0.3em;
-    border-radius: 10px;
-    box-shadow: 0 0 10px 0.1px var(--main-bg-color);
-    width: 260px;
-    height: auto;
-    
-}
 
-.card-container .card .card-content {
-    width: 90%;
-}
-
-.card-container .card .card-content h2 {
-    padding-bottom: 10px;
-    color: var(--main-bg-color);
-    border-bottom: 3px solid var(--main-bg-color);
-    width: 90%;
-}
 
 /*_________-BUTTON, CARD BUTTON AND MODEL PHOTO_________*/
 .button {
@@ -215,17 +113,31 @@ margin-bottom: 1em;
     height: 200px;
 }
 
+.footer-copyright{
+    color: var(--emphasis-font-color);
+}
 .footer .photo-author {
     width: 50px;
     height: 50px;
 }
 
+
 /*___________MEDIA QUERIES___________*/
-@media screen and (min-width: 800px) {
-    .baner {
-        box-shadow: 0 1px 10px var(--main-bg-color);
+
+@media screen and (min-width: 750px) {
+    .baner, .about-container {
+       box-shadow: 0px 5px 5px rgba(0, 68, 129,.5);;
+ 
+    }
+    .baner-content{
+        justify-self: start;
+    }
+    .img-container{
+        justify-self: end;
     }
     .box-card{
         width: 75%;
     }
+  
+    
 }

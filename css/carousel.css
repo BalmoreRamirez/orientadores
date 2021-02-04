@@ -1,0 +1,98 @@
+/*________SECTION OF CARDS___________ */  
+
+.card-container{  
+    justify-content: center; 
+    margin: 4em 0;
+}
+.card-container-title{
+    font-size: 2em;
+}
+
+.slider input[type='radio'] {
+display: none;
+}
+.slider{
+    
+    max-width: 800px;
+    width: 80%;
+     position: relative;
+}
+.overflow{
+    overflow: hidden;
+    width: 100%;
+}
+ .slides{
+     display: flex;
+    width: inherit;
+}
+
+
+.overflow .slides .card {
+    flex: none;
+    margin: .1em .5em;
+    padding: 1em 0.3em;
+    border-radius: 10px;
+    box-shadow: 0 0 10px 0.1px var(--main-bg-color);
+    min-width: 220px;
+    transition: transform 0.5s linear;
+    
+}
+
+.card-container .card .card-content {
+    width: 90%;
+}
+
+.card-container .card .card-content h3 {
+    padding-bottom: 10px;
+    color: var(--main-bg-color);
+    border-bottom: 3px solid var(--main-bg-color);
+    width: 90%;
+}
+
+.slider #controls label {
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    display: none;
+    transition: opacity 0.3s linear;
+    cursor: pointer;
+}
+
+.slider #slide1:checked ~ .overflow .slides > .card {
+    transform: translateX(0%);
+}
+.slider #slide2:checked ~ .overflow .slides > .card {
+    transform: translateX(calc(-100% - 1em));
+}
+.slider #slide3:checked ~ .overflow .slides > .card {
+    transform: translateX(calc(-200% - 1em));
+}
+
+.slider #slide2:checked ~ #controls label:nth-child(1),
+.slider #slide3:checked ~ #controls label:nth-child(2),
+.slider #slide1:checked ~ #controls label:nth-child(3) {
+    background-image: url(../assets/svg/btn-left.svg);
+    background-repeat: no-repeat;
+    top: 50%;
+    left: -5%;
+    background-size: cover;
+    display: block;
+    opacity: 1;
+}
+.slider #slide1:checked ~ #controls label:nth-child(2),
+.slider #slide2:checked ~ #controls label:nth-child(3),
+.slider #slide3:checked ~ #controls label:nth-child(1) {
+    background-image: url(../assets/svg/btn-right.svg);
+        background-repeat: no-repeat;
+    
+    background-size: cover;
+    display: block;
+    opacity: 1;
+    top: 50%;
+    right: -5%;
+}
+@media screen and (min-width:996px){
+    .slides{
+        justify-content: center;
+    }
+}

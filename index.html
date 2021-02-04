@@ -16,7 +16,10 @@
         <meta name="author" content="Willian Chávez" />
 
         <!-- Style sheet -->
-        <link rel="stylesheet" href="css/styles.css?t=1611357279174" />
+        <link rel="stylesheet" href="css/styles.css" />
+        <link rel="stylesheet" href="css/navBar.css" />
+        <link rel="stylesheet" href="css/about.css" />
+        <link rel="stylesheet" href="css/carousel.css" />
 
         <link rel="shortcut icon" href="assets/img/icon.png" type="image/x-icon" />
         <title>orientador</title>
@@ -24,8 +27,21 @@
 
     <body>
         <!--NAV BAR -->
-        <nav class="nav-bar">
-            <span class="title">Orientador</span>
+        <nav class="container-nav-bar" id="inicio">
+            <nav class="nav-bar">
+                <a href="#inicio" class="title">Orientador</a>
+                <div class="container-item">
+                    <div class="nav-item">
+                        <a href="#inicio">Inicio</a>
+                    </div>
+                    <div class="nav-item">
+                        <a href="#explorar">Explorar</a>
+                    </div>
+                    <div class="nav-item">
+                        <a href="#nosotros">Nosotros</a>
+                    </div>
+                </div>
+            </nav>
 
             <input type="checkbox" id="btn-menu" name="btn-menu" />
             <!--label to open-->
@@ -34,11 +50,17 @@
             <div class="container-menu">
                 <!--aside position on the right-->
                 <aside class="content-menu">
-                    <a href="#">Especialidades</a>
-                    <a href="#">Especialidades</a>
-                    <a href="#">Especialidades</a>
-                    <a href="#">Especialidades</a>
-                    <a href="#">Especialidades</a>
+                    <div class="item-menu">
+                        <a href="#inicio">Inicio</a>
+                    </div>
+                    <div class="item-menu">
+                        <a href="#explorar">Explorar</a>
+                    </div>
+
+                    <div class="item-menu">
+                        <a href="#nosotros">Nosotros</a>
+                    </div>
+
                     <!--label to close-->
                     <label for="btn-menu" class="lbl-menu"><i class="fas fa-times"></i></label>
                 </aside>
@@ -54,68 +76,130 @@
                         <span class="baner-span">VIVIR</span><br />
                         EN EL CIELO
                     </h1>
-                    <a href="#">
+                    <a href="#explorar">
                         <div class="button">Conoce más</div>
                     </a>
                 </div>
-                <div class="img-container">
-                    <img src="assets/img/draw_camping.svg" alt="" />
+                <div class="img-baner-container">
+                    <img src="assets/svg/draw_camping.svg" alt="" />
                 </div>
             </div>
         </header>
         <!-------------------------------------------------------------------------------------------- -->
         <!-- CARD CONTAINER-->
-        <section class="card-container">
-            <div class="box-card">
-                <!--card-->
-                <div class="card">
-                    <div class="img-container">
-                        <img class="model-photo" src="assets/img/model_photo.jpg" alt="model photo" />
-                    </div>
-                    <div class="card-content">
-                        <h2>Especialidades</h2>
-                        <a href="#">
-                            <div class="button card-button">Entrar</div>
-                        </a>
+        <section class="card-container" id="explorar">
+            <h2 class="card-container-title">Que deseas explorar</h2>
+
+            <div class="slider">
+                <input type="radio" name="slide" id="slide1" checked />
+                <input type="radio" name="slide" id="slide2" />
+                <input type="radio" name="slide" id="slide3" />
+          
+                <div class="overflow">
+                    <div class="slides">
+                        <!--card-->
+                        <div class="card">
+                            <div class="img-container">
+                                <img class="model-photo" src="assets/img/especialidades.jpg" alt="model photo" />
+                            </div>
+                            <div class="card-content">
+                                <h3>Especialidades</h3>
+                                <a href="#">
+                                    <div class="button card-button">Entrar</div>
+                                </a>
+                            </div>
+                        </div>
+
+                        <!--card-->
+                        <div class="card">
+                            <div class="img-container" width="300px" height="300px">
+                                <img class="model-photo" src="assets/img/libros.jpg" alt="model photo" display="block" />
+                            </div>
+                            <div class="card-content">
+                                <h3>Libros</h3>
+                                <a href="#">
+                                    <div class="button card-button">Entrar</div>
+                                </a>
+                            </div>
+                        </div>
+
+                        <!--card-->
+                        <div class="card">
+                            <div class="img-container">
+                                <img class="model-photo" src="assets/img/art.jpg" alt="model photo" />
+                            </div>
+                            <div class="card-content">
+                                <h3>Artículos</h3>
+                                <a href="#">
+                                    <div class="button card-button">Entrar</div>
+                                </a>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
-                <!--card-->
-                <div class="card">
-                    <div class="img-container" width="300px" height="300px">
-                        <img class="model-photo" src="assets/img/model_photo.jpg" alt="model photo" display="block" />
-                    </div>
-                    <div class="card-content">
-                        <h2>Especialidades</h2>
-                        <a href="#">
-                            <div class="button card-button">Entrar</div>
-                        </a>
+                <ul id="controls">
+                    <label for="slide1"></label>
+                    <label for="slide2"></label>
+                    <label for="slide3"></label>
+                </ul>
+            </div>
+        </section>
+
+        <!--ABOUT-->
+
+        <section class="card-container about-container" id="nosotros">
+            <h2 class="card-container-title">Sobre nosotros</h2>
+
+            <div class="card-container-box">
+
+                <!--about card-->
+                <div class="about-card">
+                    <div class="about-card-content">
+                        <img src="assets/img/aboutIMG.jpg" alt="author this page" class="about-img" />
+                        <figcaption class="about-card-description">
+                            <span class="about-card-content-name">José Roberto Cruz</span>
+                            <span class="about-card-content-range">Guia Mayor</span>
+                        </figcaption>
                     </div>
                 </div>
 
-                <!--card-->
-                <div class="card">
-                    <div class="img-container">
-                        <img class="model-photo" src="assets/img/model_photo.jpg" alt="model photo" />
+                <!--about card-->
+                <div class="about-card">
+                    <div class="about-card-content">
+                        <p class="description">
+                            Lorem, ipsum dolor sit adipisicing elit. Ex dolores incidunt similique nemo commodi ipsam nisi vitae tempora
+                            laudantium tempore quibusdam exquam, numquam quidem. Ab, voluptatibus?
+                        </p>
+                        <figcaption class="about-card-description">
+                            <span class="about-card-content-name">José Roberto Cruz</span>
+                            <span class="about-card-content-range">Guia Mayor</span>
+                        </figcaption>
                     </div>
-                    <div class="card-content">
-                        <h2>Especialidades</h2>
-                        <a href="#">
-                            <div class="button card-button">Entrar</div>
-                        </a>
+                </div>
+
+                <!--about card-->
+                <div class="about-card">
+                    <div class="about-card-content">
+                        <img src="assets/img/aboutIMG.jpg" alt="author this page" class="about-img" />
+                        <figcaption class="about-card-description">
+                            <span class="about-card-content-name">José Roberto Cruz</span>
+                            <span class="about-card-content-range">Guia Mayor</span>
+                        </figcaption>
                     </div>
                 </div>
             </div>
         </section>
         <!-------------------------------------------------------------------------------------------- -->
+
         <!-- FOOTER -->
         <footer class="footer">
             <div class="img-container">
                 <a href="#">
-                    <img class="model-photo photo-autor" src="assets/img/model_photo.jpg" alt="model photo" />
+                    <img class="model-photo photo-autor" src="assets/img/copyright.jpeg" alt="model photo" />
                 </a>
             </div>
-            <span>Copyright &#xA9;.</span>
+            <span class="footer-copyright">Copyright &#xA9;.</span>
             <span>Todos los derechos reservados</span>
         </footer>
         <!-------------------------------------------------------------------------------------------- -->
